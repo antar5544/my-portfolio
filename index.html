@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عبدالله عنتر | Abdullah Antar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Amiri', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #023e8a;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #0077b6;
+    }
+
+    section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .portfolio-item, .certificate {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #023e8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #ffffff;
+      border: 1px solid #0077b6;
+      color: #0077b6;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" onclick="toggleLanguage()">English</button>
+
+  <header>
+    <h1>عبدالله عنتر</h1>
+    <p>مطور محتوى رقمي وتعليمي</p>
+  </header>
+
+  <nav>
+    <a href="#portfolio">معرض الأعمال</a>
+    <a href="#skills">المهارات</a>
+    <a href="#certificates">الشهادات</a>
+    <a href="#blog">المدونة</a>
+    <a href="#contact">التواصل</a>
+  </nav>
+
+  <section id="portfolio">
+    <h2>معرض الأعمال</h2>
+    <div class="portfolio-item">مشروع 1 - تصميم موقع للأطفال</div>
+    <div class="portfolio-item">مشروع 2 - حملة تسويقية تفاعلية</div>
+  </section>
+
+  <section id="skills">
+    <h2>المهارات</h2>
+    <ul>
+      <li>تصميم تجارب المستخدم</li>
+      <li>إنتاج المحتوى بالفيديو</li>
+      <li>الذكاء الاصطناعي في التعليم</li>
+    </ul>
+  </section>
+
+  <section id="certificates">
+    <h2>الشهادات</h2>
+    <div class="certificate">شهادة في تصميم التعلم الإلكتروني - 2023</div>
+    <div class="certificate">شهادة في التسويق الرقمي - 2022</div>
+  </section>
+
+  <section id="blog">
+    <h2>المدونة</h2>
+    <p>تابع مقالاتي وأفكاري حول التعليم وصناعة المحتوى.</p>
+  </section>
+
+  <section id="contact">
+    <h2>معلومات التواصل</h2>
+    <p>البريد: example@email.com</p>
+    <p>الهاتف: 0500000000</p>
+    <p>
+      <a href="https://twitter.com" target="_blank">تويتر</a> |
+      <a href="https://linkedin.com" target="_blank">لينكدإن</a> |
+      <a href="https://youtube.com" target="_blank">يوتيوب</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 عبدالله عنتر. جميع الحقوق محفوظة.
+  </footer>
+
+  <script>
+    let currentLang = 'ar';
+    function toggleLanguage() {
+      const isArabic = currentLang === 'ar';
+      document.documentElement.lang = isArabic ? 'en' : 'ar';
+      document.documentElement.dir = isArabic ? 'ltr' : 'rtl';
+      currentLang = isArabic ? 'en' : 'ar';
+      document.querySelector('.lang-toggle').textContent = isArabic ? 'العربية' : 'English';
+      translateContent(isArabic ? 'en' : 'ar');
+    }
+
+    function translateContent(lang) {
+      const translations = {
+        en: {
+          name: "Abdullah Antar",
+          subtitle: "Digital and Educational Content Creator",
+          nav: ["Portfolio", "Skills", "Certificates", "Blog", "Contact"],
+          sections: {
+            portfolio: "Project 1 - Kids Website Design<br>Project 2 - Interactive Marketing Campaign",
+            skills: ["User Experience Design", "Video Content Production", "AI in Education"],
+            certificates: ["E-learning Design Certificate - 2023", "Digital Marketing Certificate - 2022"],
+            blog: "Follow my thoughts and articles on education and content creation.",
+            contact: [
+              "Email: example@email.com",
+              "Phone: 0500000000",
+              "<a href='https://twitter.com' target='_blank'>Twitter</a> | <a href='https://linkedin.com' target='_blank'>LinkedIn</a> | <a href='https://youtube.com' target='_blank'>YouTube</a>"
+            ],
+            footer: "© 2025 Abdullah Antar. All rights reserved."
+          }
+        },
+        ar: {
+          name: "عبدالله عنتر",
+          subtitle: "مطور محتوى رقمي وتعليمي",
+          nav: ["معرض الأعمال", "المهارات", "الشهادات", "المدونة", "التواصل"],
+          sections: {
+            portfolio: "مشروع 1 - تصميم موقع للأطفال<br>مشروع 2 - حملة تسويقية تفاعلية",
+            skills: ["تصميم تجارب المستخدم", "إنتاج المحتوى بالفيديو", "الذكاء الاصطناعي في التعليم"],
+            certificates: ["شهادة في تصميم التعلم الإلكتروني - 2023", "شهادة في التسويق الرقمي - 2022"],
+            blog: "تابع مقالاتي وأفكاري حول التعليم وصناعة المحتوى.",
+            contact: [
+              "البريد: example@email.com",
+              "الهاتف: 0500000000",
+              "<a href='https://twitter.com' target='_blank'>تويتر</a> | <a href='https://linkedin.com' target='_blank'>لينكدإن</a> | <a href='https://youtube.com' target='_blank'>يوتيوب</a>"
+            ],
+            footer: "© 2025 عبدالله عنتر. جميع الحقوق محفوظة."
+          }
+        }
+      };
+
+      const t = translations[lang];
+
+      document.querySelector("header h1").textContent = t.name;
+      document.querySelector("header p").textContent = t.subtitle;
+
+      const navLinks = document.querySelectorAll("nav a");
+      t.nav.forEach((text, i) => navLinks[i].textContent = text);
+
+      document.querySelector("#portfolio").innerHTML = `<h2>${t.nav[0]}</h2><div class="portfolio-item">${t.sections.portfolio.split('<br>')[0]}</div><div class="portfolio-item">${t.sections.portfolio.split('<br>')[1]}</div>`;
+      document.querySelector("#skills").innerHTML = `<h2>${t.nav[1]}</h2><ul>${t.sections.skills.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+      document.querySelector("#certificates").innerHTML = `<h2>${t.nav[2]}</h2>${t.sections.certificates.map(cert => `<div class="certificate">${cert}</div>`).join('')}`;
+      document.querySelector("#blog").innerHTML = `<h2>${t.nav[3]}</h2><p>${t.sections.blog}</p>`;
+      document.querySelector("#contact").innerHTML = `<h2>${t.nav[4]}</h2><p>${t.sections.contact[0]}</p><p>${t.sections.contact[1]}</p><p>${t.sections.contact[2]}</p>`;
+      document.querySelector("footer").innerHTML = t.sections.footer;
+    }
+  </script>
+</body>
+</html>
